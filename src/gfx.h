@@ -23,6 +23,7 @@ void gfx_image_cover(const tex_t *t, float x, float y, float w, float h, uint32_
 float gfx_text(int font, float size, float x, float y, uint32_t rgba, int align, const char *s);
 float gfx_text_w(int font, float size, const char *s);
 int  gfx_tex_load(tex_t *t, const char *path);
+int  gfx_tex_load_bg(tex_t *t, const char *path);   // backgrounds: odd aspect ratios are composed to 16:9
 void gfx_tex_free(tex_t *t);
 
 // Gioco: carica il fotogramma HD e lo disegna (4:3 o 16:9) con eventuale overlay e filtro CRT

@@ -194,6 +194,105 @@ int gfx_tex_load(tex_t *t, const char *path) {
     t->w = w; t->h = h;
     return t->id != 0;
 }
+// background images whose shape is far from 16:9 (e.g. 3:1 SteamGridDB heroes): build a 1920x1080
+// picture with the whole image centred and a blurred, darkened copy filling the empty space
+static unsigned char *compose_bg(const unsigned char *s, int w, int h) {
+    enum { W = 1920, H = 1080, SW = 48, SH = 27 };
+    static unsigned char sm[SH * SW * 4], sm2[SH * SW * 4];
+    // 1) small cover-cropped copy (box average) -> blur
+    float ra = (float)W / H, cw = (float)w, ch = (float)h, cx = 0, cy = 0;
+    if ((float)w / h > ra) { cw = h * ra; cx = (w - cw) * 0.5f; } else { ch = w / ra; cy = (h - ch) * 0.5f; }
+    for (int j = 0; j < SH; ++j) for (int i = 0; i < SW; ++i) {
+        int x0 = (int)(cx + cw * i / SW), x1 = (int)(cx + cw * (i + 1) / SW), y0 = (int)(cy + ch * j / SH), y1 = (int)(cy + ch * (j + 1) / SH);
+        if (x1 <= x0) x1 = x0 + 1; if (y1 <= y0) y1 = y0 + 1;
+        int sx = (x1 - x0) / 12 + 1, sy = (y1 - y0) / 12 + 1;
+        unsigned acc[3] = {0}, n = 0;
+        for (int y = y0; y < y1 && y < h; y += sy) for (int x = x0; x < x1 && x < w; x += sx) {
+            const unsigned char *p = s + ((size_t)y * w + x) * 4;
+            acc[0] += p[0]; acc[1] += p[1]; acc[2] += p[2]; ++n;
+        }
+        for (int c = 0; c < 3; ++c) sm[(j * SW + i) * 4 + c] = (unsigned char)(n ? acc[c] / n : 0);
+    }
+    for (int pass = 0; pass < 5; ++pass) {
+        for (int j = 0; j < SH; ++j) for (int i = 0; i < SW; ++i) for (int c = 0; c < 3; ++c) {
+            unsigned a = 0, n = 0;
+            for (int dj = -2; dj <= 2; ++dj) for (int di = -2; di <= 2; ++di) {
+                int jj = j + dj, ii = i + di;
+                if (jj < 0 || jj >= SH || ii < 0 || ii >= SW) continue;
+                a += sm[(jj * SW + ii) * 4 + c]; ++n;
+            }
+            sm2[(j * SW + i) * 4 + c] = (unsigned char)(a / n);
+        }
+        memcpy(sm, sm2, sizeof sm);
+    }
+    // 2) whole image fitted and centred
+    float f = fminf((float)W / w, (float)H / h);
+    float fw = w * f, fh = h * f, ox = (W - fw) * 0.5f, oy = (H - fh) * 0.5f;
+    float edge = 60.0f;   // soft blend at the borders of the fitted image
+    unsigned char *o = (unsigned char*)malloc((size_t)W * H * 4);
+    if (!o) return NULL;
+    // blurred background: horizontal pass into SH rows of W pixels, then vertical lerp per output row
+    static float hrow[SH][W][3];
+    for (int j = 0; j < SH; ++j) for (int x = 0; x < W; ++x) {
+        float sx = (x + 0.5f) * SW / W - 0.5f; if (sx < 0) sx = 0; if (sx > SW - 1) sx = SW - 1;
+        int i0 = (int)sx, i1 = i0 + 1 < SW ? i0 + 1 : i0; float fx = sx - i0;
+        for (int c = 0; c < 3; ++c)
+            hrow[j][x][c] = (sm[(j * SW + i0) * 4 + c] * (1 - fx) + sm[(j * SW + i1) * 4 + c] * fx) * 0.45f;
+    }
+    // fitted image: precomputed horizontal mapping
+    int fx0 = (int)ceilf(ox), fx1 = (int)floorf(ox + fw); if (fx0 < 0) fx0 = 0; if (fx1 > W) fx1 = W;
+    int fy0 = (int)ceilf(oy), fy1 = (int)floorf(oy + fh); if (fy0 < 0) fy0 = 0; if (fy1 > H) fy1 = H;
+    static int mx0[W], mx1[W]; static float mfx[W], max_[W];
+    for (int x = fx0; x < fx1; ++x) {
+        float lx = x + 0.5f - ox, sx = lx / f - 0.5f;
+        if (sx < 0) sx = 0; if (sx > w - 1) sx = (float)(w - 1);
+        mx0[x] = (int)sx; mx1[x] = mx0[x] + 1 < w ? mx0[x] + 1 : mx0[x]; mfx[x] = sx - mx0[x];
+        float d = fminf(lx, fw - lx); max_[x] = (fw >= W - 1) ? 1.0f : (d >= edge ? 1.0f : d / edge);
+    }
+    for (int y = 0; y < H; ++y) {
+        float sy = (y + 0.5f) * SH / H - 0.5f; if (sy < 0) sy = 0; if (sy > SH - 1) sy = SH - 1;
+        int j0 = (int)sy, j1 = j0 + 1 < SH ? j0 + 1 : j0; float fy = sy - j0;
+        unsigned char *q = o + (size_t)y * W * 4;
+        int inrow = y >= fy0 && y < fy1;
+        float ay = 1, ty = 0; int r0 = 0, r1 = 0;
+        if (inrow) {
+            float ly = y + 0.5f - oy, d = fminf(ly, fh - ly);
+            ay = (fh >= H - 1) ? 1.0f : (d >= edge ? 1.0f : d / edge);
+            float yy = ly / f - 0.5f; if (yy < 0) yy = 0; if (yy > h - 1) yy = (float)(h - 1);
+            r0 = (int)yy; r1 = r0 + 1 < h ? r0 + 1 : r0; ty = yy - r0;
+        }
+        const unsigned char *s0 = s + (size_t)r0 * w * 4, *s1 = s + (size_t)r1 * w * 4;
+        for (int x = 0; x < W; ++x, q += 4) {
+            float a = (inrow && x >= fx0 && x < fx1) ? fminf(ay, max_[x]) : 0.0f;
+            float bg[3] = {0, 0, 0};
+            if (a < 1.0f) for (int c = 0; c < 3; ++c) bg[c] = hrow[j0][x][c] * (1 - fy) + hrow[j1][x][c] * fy;
+            if (a > 0.0f) {
+                int x0 = mx0[x] * 4, x1 = mx1[x] * 4; float tx = mfx[x];
+                for (int c = 0; c < 3; ++c) {
+                    float t0 = s0[x0 + c] + (s0[x1 + c] - s0[x0 + c]) * tx, t1 = s1[x0 + c] + (s1[x1 + c] - s1[x0 + c]) * tx;
+                    float fg = t0 + (t1 - t0) * ty;
+                    q[c] = (unsigned char)(bg[c] + (fg - bg[c]) * a + 0.5f);
+                }
+            } else for (int c = 0; c < 3; ++c) q[c] = (unsigned char)(bg[c] + 0.5f);
+            q[3] = 255;
+        }
+    }
+    return o;
+}
+int gfx_tex_load_bg(tex_t *t, const char *path) {
+    int w, h, n;
+    unsigned char *d = stbi_load(path, &w, &h, &n, 4);
+    if (!d) { memset(t, 0, sizeof *t); return 0; }
+    float r = ((float)w / h) / (16.0f / 9.0f);
+    if (r > 1.15f || r < 0.87f) {
+        unsigned char *c = compose_bg(d, w, h);
+        if (c) { stbi_image_free(d); d = c; w = 1920; h = 1080; }
+    }
+    t->id = gfxb_tex_create(w, h, TEXF_RGBA8, d, 1);
+    free(d);   // stbi_image_free is free() with the default allocator
+    t->w = w; t->h = h;
+    return t->id != 0;
+}
 void gfx_tex_free(tex_t *t) {
     if (t->id) gfxb_tex_free(t->id);
     memset(t, 0, sizeof *t);

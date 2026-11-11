@@ -1756,8 +1756,8 @@ static void load_assets(void) {
         if (!gfx_tex_load(&g->logo, p)) { snprintf(p, sizeof p, "%s/games/%s_logo.png", assetdir, g->id); gfx_tex_load(&g->logo, p); }
         snprintf(p, sizeof p, "%s/games/%s_logo_jp.png", assetdir, g->id); gfx_tex_load(&g->logo_jp, p);
         snprintf(p, sizeof p, "%s/artwork/%s_bg.jpg", basedir, g->id);
-        if (!gfx_tex_load(&g->bg, p)) { snprintf(p, sizeof p, "%s/artwork/%s_bg.png", basedir, g->id);
-            if (!gfx_tex_load(&g->bg, p)) { snprintf(p, sizeof p, "%s/games/%s_bg.jpg", assetdir, g->id); gfx_tex_load(&g->bg, p); } }
+        if (!gfx_tex_load_bg(&g->bg, p)) { snprintf(p, sizeof p, "%s/artwork/%s_bg.png", basedir, g->id);
+            if (!gfx_tex_load_bg(&g->bg, p)) { snprintf(p, sizeof p, "%s/games/%s_bg.jpg", assetdir, g->id); gfx_tex_load_bg(&g->bg, p); } }
     }
 }
 
