@@ -1,0 +1,7 @@
+The CRT filter (scanlines + blur) in src/gfxb_d3d11.c and src/gfxb_gl.c is a simplified port of
+"CRT-ZERO", itself a simplified version of CRT-Frutbunn, which is adapted from frutbunn's
+"Another CRT shader" on Shadertoy: https://www.shadertoy.com/view/XdyGzR
+Shadertoy content without an explicit license is published under Creative Commons
+Attribution-NonCommercial-ShareAlike 3.0 Unported (https://creativecommons.org/licenses/by-nc-sa/3.0/).
+That shader code keeps that license: attribution to frutbunn, non-commercial use, same license
+for derivatives.

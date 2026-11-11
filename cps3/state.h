@@ -1,0 +1,2 @@
+// shim
+#include "burnint.h"
