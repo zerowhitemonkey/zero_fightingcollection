@@ -1,0 +1,4 @@
+[
+  {"addr": "6e618", "orig": "67000014", "new": "60000014", "note": "controllo della somma delle word $200-$1D0CD (calcolata all'avvio da $6E5E0, confrontata a ogni frame da $6E604 con $7F002): sempre superato, cosi' le patch al codice (anche quelle al caricamento dell'app) non bloccano il gioco"},
+  {"addr": "18b92", "orig": "67000004", "new": "60000004", "note": "ombre: disegnate a ogni frame (prima solo se parita' del contatore -$7fec(a5) == $57(giocatore) = P1/P2 a frame alterni)"}
+]

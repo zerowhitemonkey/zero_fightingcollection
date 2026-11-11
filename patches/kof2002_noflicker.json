@@ -1,0 +1,20 @@
+[
+ {
+  "addr": "1503c",
+  "orig": "674e",
+  "new": "4e71",
+  "desc": "ombre dei lottatori: disegnate a ogni frame (prima solo con parita' frame = bit0 di $171 del giocatore + contatore -$7f76(a5) -> P1/P2 alterni)"
+ },
+ {
+  "addr": "1db88",
+  "orig": "4a2c00e46a00d37e",
+  "new": "082d0004808b6704",
+  "desc": "tinte del personaggio (MAX/colpi): applicate 16 frame si' / 16 no (bit 4 del contatore frame -$7f75(a5)) invece che a frame alterni (bit 7 di $e4)"
+ },
+ {
+  "addr": "1bb5a",
+  "orig": "4a2c00e46a000008",
+  "new": "082d0004808b6706",
+  "desc": "effetto colore $3a del personaggio (contorno durante i colpi): 16 frame si' / 16 no invece che a frame alterni (bit 7 di $e4)"
+ }
+]

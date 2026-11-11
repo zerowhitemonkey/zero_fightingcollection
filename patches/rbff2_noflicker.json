@@ -1,0 +1,4 @@
+[
+ {"addr": "17300", "orig": "0a2c00800082", "new": "002c00800082", "desc": "ombra del lottatore: disegnata a ogni frame (era un frame si' e uno no): eori.b #$80 -> ori.b #$80"},
+ {"addr": "17472", "orig": "0a2c00800082", "new": "002c00800082", "desc": "ombra (variante): idem"}
+]

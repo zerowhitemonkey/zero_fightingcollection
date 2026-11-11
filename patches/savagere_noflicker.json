@@ -1,0 +1,14 @@
+[
+ {
+  "addr": "1ed46",
+  "orig": "082c0001000b67000026",
+  "new": "4ef90007ff004e714e71",
+  "desc": "controllo 'disegna a frame alterni' -> routine (asm/savagere_shadow.s)"
+ },
+ {
+  "addr": "7ff00",
+  "orig": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+  "new": "082c0001000b67100cac53484144001067064ef90001ed504ef90001ed74",
+  "desc": "routine: ombre (nome SHAD..) sempre disegnate, altri oggetti come l'originale"
+ }
+]

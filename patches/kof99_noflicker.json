@@ -1,0 +1,92 @@
+[
+ {
+  "addr": "32800",
+  "orig": "6758",
+  "new": "4e71",
+  "desc": "ombre: P1/P2 a frame alterni ($170(giocatore)&1 + contatore -$7f72) -> sempre disegnate"
+ },
+ {
+  "addr": "32924",
+  "orig": "6706",
+  "new": "4e71",
+  "desc": "silhouette proiettata (oggetto $328F6): disegnata solo nei frame pari ($170+contatore) -> sempre"
+ },
+ {
+  "addr": "14114",
+  "orig": "4a2c00e46a00d1de",
+  "new": "082d0004808f6704",
+  "desc": "tinte del personaggio (bit 7 di $E4 alterna ogni frame) -> 16 frame si' / 16 no (btst #4,-$7f71(a5))"
+ },
+ {
+  "addr": "31ee",
+  "orig": "0000",
+  "new": "0300",
+  "desc": "stage dell'aeroporto: auto-animazione delle tile a ogni frame (LSPCMODE 0, luci della citta' a frame alterni) -> ogni 4 frame"
+ },
+ {
+  "addr": "9cfb8",
+  "orig": "6702",
+  "new": "6002",
+  "desc": "oggetto di scenario (sagome/elementi degli stage) disegnato solo nei frame pari -> sempre"
+ },
+ {
+  "addr": "a277e",
+  "orig": "6602",
+  "new": "6002",
+  "desc": "oggetto di scenario (sagome/elementi degli stage) disegnato solo nei frame dispari -> sempre"
+ },
+ {
+  "addr": "a471a",
+  "orig": "6602",
+  "new": "6002",
+  "desc": "oggetto di scenario (sagome/elementi degli stage) disegnato solo nei frame dispari -> sempre"
+ },
+ {
+  "addr": "a4738",
+  "orig": "6702",
+  "new": "6002",
+  "desc": "oggetto di scenario (sagome/elementi degli stage) disegnato solo nei frame pari -> sempre"
+ },
+ {
+  "addr": "a49fc",
+  "orig": "6602",
+  "new": "6002",
+  "desc": "oggetto di scenario (sagome/elementi degli stage) disegnato solo nei frame dispari -> sempre"
+ },
+ {
+  "addr": "a5e42",
+  "orig": "6602",
+  "new": "6002",
+  "desc": "oggetto di scenario (sagome/elementi degli stage) disegnato solo nei frame dispari -> sempre"
+ },
+ {
+  "addr": "a5e6a",
+  "orig": "6602",
+  "new": "6002",
+  "desc": "oggetto di scenario (sagome/elementi degli stage) disegnato solo nei frame dispari -> sempre"
+ },
+ {
+  "addr": "a5eb6",
+  "orig": "6702",
+  "new": "6002",
+  "desc": "oggetto di scenario (sagome/elementi degli stage) disegnato solo nei frame pari -> sempre"
+ },
+ {
+  "addr": "a5ede",
+  "orig": "6702",
+  "new": "6002",
+  "desc": "oggetto di scenario (sagome/elementi degli stage) disegnato solo nei frame pari -> sempre"
+ },
+ {
+  "addr": "a6aa6",
+  "orig": "6702",
+  "new": "6002",
+  "desc": "oggetto di scenario (sagome/elementi degli stage) disegnato solo nei frame pari -> sempre"
+ },
+ {
+  "addr": "a6ab4",
+  "orig": "6602",
+  "new": "6002",
+  "desc": "oggetto di scenario (sagome/elementi degli stage) disegnato solo nei frame dispari -> sempre"
+ }
+]

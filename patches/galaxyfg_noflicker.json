@@ -1,0 +1,38 @@
+[
+ {
+  "addr": "ede28",
+  "orig": "3028b60ee2486574",
+  "new": "4e714e714e714e71",
+  "desc": "ombre: disegna sempre P1 e poi P2 (prima solo uno dei due, scelto dal bit 0 del contatore frame $10122C)"
+ },
+ {
+  "addr": "ede52",
+  "orig": "6f0000c2",
+  "new": "6f000050",
+  "desc": "P1 fuori schermo (x): salta al corpo di P2 invece che alla fine"
+ },
+ {
+  "addr": "ede5a",
+  "orig": "6c0000ba",
+  "new": "6c000048",
+  "desc": "P1 fuori schermo (x): idem"
+ },
+ {
+  "addr": "ede7c",
+  "orig": "6f000098",
+  "new": "6f000026",
+  "desc": "P1 fuori schermo (y): idem"
+ },
+ {
+  "addr": "ede9e",
+  "orig": "307c0002606c",
+  "new": "4eb800804e71",
+  "desc": "dopo il preparativo di P1: jsr $80 (disegna P1 e ripristina a0), poi prosegue nel corpo di P2"
+ },
+ {
+  "addr": "80",
+  "orig": "f576a5f537f567f5f5f55dff05f465fd15f7",
+  "new": "307c00024eb9000035f041f900105c1e4e75",
+  "desc": "area inutilizzata dei vettori trap: movea.w #2,a0; jsr $35f0; lea $105c1e,a0; rts"
+ }
+]

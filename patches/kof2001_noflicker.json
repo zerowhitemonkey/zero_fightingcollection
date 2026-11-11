@@ -1,0 +1,5 @@
+[
+ {"addr": "1d97c", "orig": "674e", "new": "4e71", "desc": "ombre ($1D95C, palette $FE): P1/P2 a frame alterni ($171(giocatore)&1 + contatore -$7f76) -> sempre disegnate"},
+ {"addr": "264f4", "orig": "4a2c00e46a00d6e0", "new": "082d0004808b6704", "desc": "tinte del personaggio (bit 7 di $E4 alterna ogni frame) -> 16 frame si' / 16 no (btst #4,-$7f75(a5))"},
+ {"addr": "247da", "orig": "4a2c00e46a000008", "new": "082d0004808b6706", "desc": "colore effetto $3a (contorno nei colpi) a frame alterni -> 16 frame si' / 16 no"}
+]

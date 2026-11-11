@@ -1,0 +1,3 @@
+[
+ {"addr": "11158", "orig": "6604", "new": "6004", "desc": "ombra del lottatore: il gestore la disegnava solo a frame alterni (contatore $82) -> sempre"}
+]

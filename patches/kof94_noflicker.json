@@ -1,0 +1,242 @@
+[
+ {
+  "addr": "2fb40",
+  "orig": "6600004a",
+  "new": "4e714e71",
+  "desc": "ombra (SHADOW): disegnata a ogni frame (prima solo con ($130+contatore) pari = P1/P2 a frame alterni)"
+ },
+ {
+  "addr": "2fa7c",
+  "orig": "6702",
+  "new": "6002",
+  "desc": "ombra variante $2FA5C: idem"
+ },
+ {
+  "addr": "3014c",
+  "orig": "6602",
+  "new": "6002",
+  "desc": "oggetto palette $FE $3012C (ombra): idem"
+ },
+ {
+  "addr": "32b78",
+  "orig": "0fff0f00",
+  "new": "0f770f77",
+  "desc": "lampo delle super (bit5 $785): sfondo bianco/rosso a frame alterni -> rosa fisso (media)"
+ },
+ {
+  "addr": "a8280",
+  "orig": "01",
+  "new": "10",
+  "desc": "pers. 04 anim 88: cel a frame alterni, durata 1 -> 16"
+ },
+ {
+  "addr": "a8286",
+  "orig": "01",
+  "new": "10",
+  "desc": "pers. 04 anim 88: cel a frame alterni, durata 1 -> 16"
+ },
+ {
+  "addr": "afca0",
+  "orig": "01",
+  "new": "10",
+  "desc": "pers. 06 anim 88: cel a frame alterni, durata 1 -> 16"
+ },
+ {
+  "addr": "afca6",
+  "orig": "01",
+  "new": "10",
+  "desc": "pers. 06 anim 88: cel a frame alterni, durata 1 -> 16"
+ },
+ {
+  "addr": "b1bc8",
+  "orig": "01",
+  "new": "10",
+  "desc": "pers. 07 anim 88: cel a frame alterni, durata 1 -> 16"
+ },
+ {
+  "addr": "b1bce",
+  "orig": "01",
+  "new": "10",
+  "desc": "pers. 07 anim 88: cel a frame alterni, durata 1 -> 16"
+ },
+ {
+  "addr": "b3a54",
+  "orig": "01",
+  "new": "10",
+  "desc": "pers. 08 anim 88: cel a frame alterni, durata 1 -> 16"
+ },
+ {
+  "addr": "b3a5a",
+  "orig": "01",
+  "new": "10",
+  "desc": "pers. 08 anim 88: cel a frame alterni, durata 1 -> 16"
+ },
+ {
+  "addr": "b9ad2",
+  "orig": "01",
+  "new": "10",
+  "desc": "pers. 09 anim 88: cel a frame alterni, durata 1 -> 16"
+ },
+ {
+  "addr": "b9ad8",
+  "orig": "01",
+  "new": "10",
+  "desc": "pers. 09 anim 88: cel a frame alterni, durata 1 -> 16"
+ },
+ {
+  "addr": "bbbe6",
+  "orig": "01",
+  "new": "10",
+  "desc": "pers. 0a anim 88: cel a frame alterni, durata 1 -> 16"
+ },
+ {
+  "addr": "bbbec",
+  "orig": "01",
+  "new": "10",
+  "desc": "pers. 0a anim 88: cel a frame alterni, durata 1 -> 16"
+ },
+ {
+  "addr": "bda24",
+  "orig": "01",
+  "new": "10",
+  "desc": "pers. 0b anim 88: cel a frame alterni, durata 1 -> 16"
+ },
+ {
+  "addr": "bda2a",
+  "orig": "01",
+  "new": "10",
+  "desc": "pers. 0b anim 88: cel a frame alterni, durata 1 -> 16"
+ },
+ {
+  "addr": "c3e9e",
+  "orig": "01",
+  "new": "10",
+  "desc": "pers. 0c anim 88: cel a frame alterni, durata 1 -> 16"
+ },
+ {
+  "addr": "c3ea4",
+  "orig": "01",
+  "new": "10",
+  "desc": "pers. 0c anim 88: cel a frame alterni, durata 1 -> 16"
+ },
+ {
+  "addr": "cd514",
+  "orig": "01",
+  "new": "10",
+  "desc": "pers. 0f anim 88: cel a frame alterni, durata 1 -> 16"
+ },
+ {
+  "addr": "cd51a",
+  "orig": "01",
+  "new": "10",
+  "desc": "pers. 0f anim 88: cel a frame alterni, durata 1 -> 16"
+ },
+ {
+  "addr": "cf166",
+  "orig": "01",
+  "new": "10",
+  "desc": "pers. 10 anim 88: cel a frame alterni, durata 1 -> 16"
+ },
+ {
+  "addr": "cf16c",
+  "orig": "01",
+  "new": "10",
+  "desc": "pers. 10 anim 88: cel a frame alterni, durata 1 -> 16"
+ },
+ {
+  "addr": "d0e8a",
+  "orig": "01",
+  "new": "10",
+  "desc": "pers. 11 anim 88: cel a frame alterni, durata 1 -> 16"
+ },
+ {
+  "addr": "d0e90",
+  "orig": "01",
+  "new": "10",
+  "desc": "pers. 11 anim 88: cel a frame alterni, durata 1 -> 16"
+ },
+ {
+  "addr": "d6638",
+  "orig": "01",
+  "new": "10",
+  "desc": "pers. 12 anim 88: cel a frame alterni, durata 1 -> 16"
+ },
+ {
+  "addr": "d663e",
+  "orig": "01",
+  "new": "10",
+  "desc": "pers. 12 anim 88: cel a frame alterni, durata 1 -> 16"
+ },
+ {
+  "addr": "d8518",
+  "orig": "01",
+  "new": "10",
+  "desc": "pers. 13 anim 88: cel a frame alterni, durata 1 -> 16"
+ },
+ {
+  "addr": "d851e",
+  "orig": "01",
+  "new": "10",
+  "desc": "pers. 13 anim 88: cel a frame alterni, durata 1 -> 16"
+ },
+ {
+  "addr": "da6d4",
+  "orig": "01",
+  "new": "10",
+  "desc": "pers. 14 anim 88: cel a frame alterni, durata 1 -> 16"
+ },
+ {
+  "addr": "da6da",
+  "orig": "01",
+  "new": "10",
+  "desc": "pers. 14 anim 88: cel a frame alterni, durata 1 -> 16"
+ },
+ {
+  "addr": "e025a",
+  "orig": "01",
+  "new": "10",
+  "desc": "pers. 15 anim 88: cel a frame alterni, durata 1 -> 16"
+ },
+ {
+  "addr": "e0260",
+  "orig": "01",
+  "new": "10",
+  "desc": "pers. 15 anim 88: cel a frame alterni, durata 1 -> 16"
+ },
+ {
+  "addr": "e21b2",
+  "orig": "01",
+  "new": "10",
+  "desc": "pers. 16 anim 88: cel a frame alterni, durata 1 -> 16"
+ },
+ {
+  "addr": "e21b8",
+  "orig": "01",
+  "new": "10",
+  "desc": "pers. 16 anim 88: cel a frame alterni, durata 1 -> 16"
+ },
+ {
+  "addr": "e4416",
+  "orig": "01",
+  "new": "10",
+  "desc": "pers. 17 anim 88: cel a frame alterni, durata 1 -> 16"
+ },
+ {
+  "addr": "e441c",
+  "orig": "01",
+  "new": "10",
+  "desc": "pers. 17 anim 88: cel a frame alterni, durata 1 -> 16"
+ },
+ {
+  "addr": "eac82",
+  "orig": "01",
+  "new": "10",
+  "desc": "pers. 19 anim 88: cel a frame alterni, durata 1 -> 16"
+ },
+ {
+  "addr": "eac88",
+  "orig": "01",
+  "new": "10",
+  "desc": "pers. 19 anim 88: cel a frame alterni, durata 1 -> 16"
+ }
+]

@@ -1,0 +1,20 @@
+[
+ {
+  "addr": "38260",
+  "orig": "0000000000000000000000000000000000000000000000000000000000000000000000000000",
+  "new": "bdfc00103a246d12bdfc00103c686c0a088400024ef90003c9f0082d0000b0314ef90003c9b2",
+  "desc": "hook ombre: oggetti $103a24-$103c68 (ombre) sempre disegnati, gli altri alternano come prima"
+ },
+ {
+  "addr": "3c9ac",
+  "orig": "082d0000b031",
+  "new": "4ef900038260",
+  "desc": "alternanza pari/dispari degli oggetti: salta al hook"
+ },
+ {
+  "addr": "1dd5a2",
+  "orig": "0000",
+  "new": "0008",
+  "desc": "LSPCMODE dello stage Tesse: animazione automatica a ogni frame (colonne semi-trasparenti) -> disattivata"
+ }
+]

@@ -1,0 +1,5 @@
+[
+ {"addr": "361ea", "orig": "6758", "new": "4e71", "desc": "ombre ($361C2, palette $FE): P1/P2 a frame alterni ($170(giocatore)&1 + contatore -$7f72) -> sempre disegnate"},
+ {"addr": "36272", "orig": "6602", "new": "6002", "desc": "riflesso/ombra rovesciata ($36246): solo nei frame dispari -> sempre"},
+ {"addr": "1901e", "orig": "4a2c00e46a00d500", "new": "082d0004808f6704", "desc": "tinte del personaggio (bit 7 di $E4 alterna ogni frame) -> 16 frame si' / 16 no"}
+]

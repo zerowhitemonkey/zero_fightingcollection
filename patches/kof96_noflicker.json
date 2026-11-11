@@ -1,0 +1,74 @@
+[
+ {
+  "addr": "24738",
+  "orig": "6758",
+  "new": "4e71",
+  "desc": "ombra (palette $FE, routine $2471A): disegnata a ogni frame (prima bchg #0,$D2(obj) = frame alterni)"
+ },
+ {
+  "addr": "2478e",
+  "orig": "4ef85152",
+  "new": "4eb85152",
+  "desc": "dopo l'ombra prosegue nel ramo del riflesso dello stage 6 (prima: riflesso solo nei frame senza ombra) = ombra e riflesso a ogni frame"
+ },
+ {
+  "addr": "13046",
+  "orig": "4a2c00e46a00e160",
+  "new": "082d000480976704",
+  "desc": "tinte del personaggio (bit 7 di $E4 alterna ogni frame): 16 frame si' / 16 no col bit 4 del contatore -$7f69(a5)"
+ },
+ {
+  "addr": "9194",
+  "orig": "0fff0f00",
+  "new": "0f770f77",
+  "desc": "lampo delle super: sfondo bianco/rosso a frame alterni (tabella letta a $9188) -> rosa fisso (media)"
+ },
+ {
+  "addr": "6fe4",
+  "orig": "0c42a200",
+  "new": "0c42a700",
+  "desc": "strati dello stage: strisce visibili fino a x=319 (prima nascoste da x>=310: bordo destro di 8 px senza stage, pensato per l'overscan)"
+ },
+ {
+  "addr": "7008",
+  "orig": "0c42a200",
+  "new": "0c42a700",
+  "desc": "strati dello stage: strisce visibili fino a x=319 (prima nascoste da x>=310: bordo destro di 8 px senza stage, pensato per l'overscan)"
+ },
+ {
+  "addr": "7266",
+  "orig": "0c42a200",
+  "new": "0c42a700",
+  "desc": "strati dello stage: strisce visibili fino a x=319 (prima nascoste da x>=310: bordo destro di 8 px senza stage, pensato per l'overscan)"
+ },
+ {
+  "addr": "7292",
+  "orig": "0c42a200",
+  "new": "0c42a700",
+  "desc": "strati dello stage: strisce visibili fino a x=319 (prima nascoste da x>=310: bordo destro di 8 px senza stage, pensato per l'overscan)"
+ },
+ {
+  "addr": "7046",
+  "orig": "0c420144",
+  "new": "0c42014e",
+  "desc": "strati dello stage (variante in pixel): strisce visibili fino a x=319 (prima nascoste da x>=310)"
+ },
+ {
+  "addr": "706e",
+  "orig": "0c420144",
+  "new": "0c42014e",
+  "desc": "strati dello stage (variante in pixel): strisce visibili fino a x=319 (prima nascoste da x>=310)"
+ },
+ {
+  "addr": "72dc",
+  "orig": "0c420144",
+  "new": "0c42014e",
+  "desc": "strati dello stage (variante in pixel): strisce visibili fino a x=319 (prima nascoste da x>=310)"
+ },
+ {
+  "addr": "730c",
+  "orig": "0c420144",
+  "new": "0c42014e",
+  "desc": "strati dello stage (variante in pixel): strisce visibili fino a x=319 (prima nascoste da x>=310)"
+ }
+]

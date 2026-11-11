@@ -1,0 +1,6 @@
+[
+ {"addr": "19df6", "orig": "6a0000e2", "new": "4e714e71", "desc": "ombre sempre disegnate"},
+ {"addr": "4f324", "orig": "5c2c0070", "new": "4e714e71", "desc": "T.O.P.: palette +6 a frame alterni rimossa"},
+ {"addr": "597ea", "orig": "6100044e6000fd44", "new": "4ef90007f0004e71", "desc": "jmp alla routine $7F000"},
+ {"addr": "7f000", "orig": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffff", "new": "0c2a000c0001670e0c2a000d000167064eb900059c3a4ef900059534", "desc": "salta la rotazione colori delle palette HUD $0C/$0D (barra HP in T.O.P.)"}
+]

@@ -1,0 +1,20 @@
+[
+ {
+  "addr": "1ece6",
+  "orig": "6704",
+  "new": "6004",
+  "desc": "HUD: banchi delle tile fix (VRAM $7500) alternati 5555/AAAA a ogni frame (btst #0,-$351(a5)) per il retino semitrasparente -> sempre 5555"
+ },
+ {
+  "addr": "413ba",
+  "orig": "008000000001",
+  "new": "008000000000",
+  "desc": "ombre (oggetto SHADOW $412A8): non piu' marcate col bit 0 di $F (= disegno a frame alterni nel disegnatore $F848E) -> sempre disegnate"
+ },
+ {
+  "addr": "146b0",
+  "orig": "67000026",
+  "new": "4e714e71",
+  "desc": "strati di sfondo marcati col bit 0 di $F (nebbia del cimitero ecc.) disegnati solo con il bit 0 di -$1dc(a5) (frame alterni) -> sempre"
+ }
+]

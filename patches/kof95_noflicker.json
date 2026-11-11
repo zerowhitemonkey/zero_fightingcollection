@@ -1,0 +1,6 @@
+[
+ {"addr":"36e76","orig":"67000054","new":"4e714e71","desc":"ombra (SHADOW n, palette $FE): disegnata a ogni frame (prima solo con ($130+contatore -$7f7a) dispari = P1/P2 a frame alterni)"},
+ {"addr":"36d82","orig":"6702","new":"6002","desc":"oggetto $36D62 (variante ombra): idem"},
+ {"addr":"37852","orig":"6602","new":"6002","desc":"oggetto palette $FE $37832 (ombra): idem"},
+ {"addr":"393b2","orig":"0fff0f00","new":"0f770f77","desc":"lampo delle super (bit5 $2785): sfondo bianco/rosso a frame alterni -> rosa fisso (media)"}
+]

@@ -1,0 +1,4 @@
+[
+ {"addr": "373ce", "orig": "6762", "new": "4e71", "desc": "ombre dei lottatori: disegnate a ogni frame (prima solo con parita' frame = bit0 di $170 del giocatore -> P1/P2 alterni)"},
+ {"addr": "19728", "orig": "4a2c00e46a00d894", "new": "082d0004808f6704", "desc": "tinte del personaggio (ARMOR/COUNTER, colpi): applicate 16 frame si' / 16 no (bit 4 del contatore frame -$7f71(a5)) invece che a frame alterni (bit 7 di $e4)"}
+]

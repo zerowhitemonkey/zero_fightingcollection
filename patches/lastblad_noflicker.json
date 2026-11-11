@@ -1,0 +1,26 @@
+[
+ {
+  "addr": "efca",
+  "orig": "082d00000293",
+  "new": "4ef9000fd000",
+  "desc": "ombre: entrambe ogni frame"
+ },
+ {
+  "addr": "f06a",
+  "orig": "0380",
+  "new": "4e71",
+  "desc": "P1 non spegne l'ombra P2"
+ },
+ {
+  "addr": "f10a",
+  "orig": "0380",
+  "new": "4e71",
+  "desc": "P2 non spegne l'ombra P1"
+ },
+ {
+  "addr": "fd000",
+  "orig": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+  "new": "302d1d9c322c01900380322c019203803b401d9c4eb90000efd44ef90000f072",
+  "desc": "routine (asm/lb1_noflicker.s)"
+ }
+]

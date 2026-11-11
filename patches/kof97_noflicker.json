@@ -1,0 +1,5 @@
+[
+ {"addr": "2a96a", "orig": "6758", "new": "4e71", "desc": "ombre ($2A942, palette $FE): P1/P2 a frame alterni ($170(giocatore)&1 + contatore -$7f66) -> sempre disegnate"},
+ {"addr": "144da", "orig": "4a2c00e46a00d866", "new": "082d0004809b6704", "desc": "tinte del personaggio (bit 7 di $E4 alterna ogni frame) -> 16 frame si' / 16 no (btst #4,-$7f65(a5))"},
+ {"addr": "2cadc", "orig": "6700de08", "new": "4e714e71", "desc": "oggetto ($2CAC4) disegnato solo nei frame dispari -> sempre"}
+]

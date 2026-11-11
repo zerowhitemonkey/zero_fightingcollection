@@ -1,0 +1,5 @@
+[
+ {"addr": "3ff08", "orig": "6606", "new": "4e71", "desc": "ombre: ogni frame (prima solo se parita' del frame = indice giocatore $70)"},
+ {"addr": "13a4a", "orig": "0a2e0008008d", "new": "002e0008008d", "desc": "tinta del personaggio ($8D bit 3): costante invece che alternata ogni frame (eori -> ori)"},
+ {"addr": "13a66", "orig": "6706", "new": "4e71", "desc": "oggetto in scomparsa ($34 < $1E): sempre visibile invece di sparire 2 frame su 8"}
+]

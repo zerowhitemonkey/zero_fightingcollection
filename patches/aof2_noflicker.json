@@ -1,0 +1,3 @@
+[
+ {"addr": "500e", "orig": "660e", "new": "6006", "desc": "ombre (gruppo $e6): disegnate ogni frame (bne $501e -> bne $5016) invece che a frame alterni"}
+]
