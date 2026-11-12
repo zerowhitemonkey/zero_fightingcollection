@@ -1,0 +1,5 @@
+Put your MAME ROM sets (.zip) here, together with the BIOS files:
+  neogeo.zip   SNK Neo Geo MVS
+  pgm.zip      IGS PolyGame Master
+Zip names do not matter for Neo Geo games (files are recognised by their content).
+In the app, OPTIONS -> ROM CHECK lists the sets each game needs and which ones are missing.

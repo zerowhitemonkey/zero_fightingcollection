@@ -2,6 +2,19 @@ CORE := core
 CORE_SRC := $(addprefix $(CORE)/,geo.c geo_cd.c geo_disc.c geo_lc8951.c geo_lspc.c geo_m68k.c geo_memcard.c geo_mixer.c geo_neo.c geo_rtc.c geo_serial.c geo_vfs.c geo_ymfm.c geo_z80.c m68k/m68kcpu.c m68k/m68kops.c ymfm/ymfm_adpcm.c ymfm/ymfm_opn.c ymfm/ymfm_ssg.c z80/z80.c deps/miniz/miniz.c deps/speex/resample.c)
 CFLAGS_CORE := -O3 -I$(CORE) -I$(CORE)/deps -I$(CORE)/deps/miniz -I$(CORE)/deps/speex -DFLOATING_POINT -DEXPORT=
 BUILD := build
+DIST := $(BUILD)/FIGHTING COLLECTION
+
+# "make" = Windows app ready to use in build/FIGHTING COLLECTION/ (exe, SDL2.dll, assets, roms folder)
+.DEFAULT_GOAL := app
+.PHONY: app
+app: $(BUILD)/FightingCollection.exe
+	@mkdir -p "$(DIST)/roms"
+	x86_64-w64-mingw32-strip -o "$(DIST)/FIGHTING COLLECTION.exe" $(BUILD)/FightingCollection.exe
+	cp $(SDLW)/bin/SDL2.dll "$(DIST)/"
+	rm -rf "$(DIST)/assets" && cp -r app/assets "$(DIST)/assets"
+	cp app/PUT_YOUR_ROMS_HERE.txt "$(DIST)/roms/"
+	@test -f "$(DIST)/steamgriddb_key.txt" || : > "$(DIST)/steamgriddb_key.txt"
+	@echo "Ready: $(DIST)/FIGHTING COLLECTION.exe"
 
 # core CPS3 (driver FBNeo adattato, C++ senza eccezioni/RTTI)
 CPS3_SRC := cps3/cps3.cpp cps3/sh2.cpp
@@ -80,7 +93,7 @@ SDLW := ext/SDL2-2.30.9/x86_64-w64-mingw32
 $(BUILD)/snkhd_lin: $(APP_SRC) $(BUILD)/libcore_lin.a
 	gcc -no-pie -O2 -Wall -Wno-unused-function $(CFLAGS_CORE) $(shell sdl2-config --cflags) $(APP_SRC) $(BUILD)/libcore_lin.a $(shell sdl2-config --libs) -lstdc++ -lpthread -lm -o $@
 
-$(BUILD)/SNKHD.exe: $(APP_WIN) $(BUILD)/libcore_win.a $(BUILD)/icon.o
+$(BUILD)/FightingCollection.exe: $(APP_WIN) $(BUILD)/libcore_win.a $(BUILD)/icon.o
 	x86_64-w64-mingw32-gcc -O2 -Wall -Wno-unused-function $(CFLAGS_CORE) -I$(SDLW)/include/SDL2 -Isnes -Dmain=SDL_main $(APP_WIN) $(BUILD)/icon.o $(BUILD)/libcore_win.a -L$(SDLW)/lib -lmingw32 -lSDL2main -lSDL2 -lpsapi -ld3d11 -ldxgi -ldxguid -luuid -lws2_32 -lwinhttp -lwinmm -mwindows -Wl,-Bstatic -lstdc++ -Wl,-Bdynamic -lm -static-libgcc -static-libstdc++ -o $@
 
 $(BUILD)/icon.o: app/icon.rc app/icon.ico
