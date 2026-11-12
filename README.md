@@ -9,14 +9,19 @@ I have always loved SNK's fighting games, and the Samurai Shodown saga in partic
 But do you know what I could never stand? What I truly hate, the thing that makes my eyes bleed every single time I see it?
 
 Those cursed flickering shadows! Yep, there's a special place in hell reserved for whoever came up with that idea.
+<img width="1216" height="896" alt="03 original samsho3 shadows" src="https://github.com/user-attachments/assets/df42ae13-bcf6-48f8-8635-46aad549617d" />
 
 Even worse: the life bars of Samurai Shodown IV. As big as a Cybertruck, neon green, and strobing like nothing you'd see at the worst rave.
 
 Another problem: the games with a camera zoom-out, which, because of the technical limits of the time, robbed those masterpiece sprites of their detail.
+<img width="1216" height="896" alt="05 original samsho3 zoomout" src="https://github.com/user-attachments/assets/099e1e7d-e2a9-4fcc-b4cd-7f02c98395c0" />
 
 So I decided to do something about it. The flicker is gone, replaced by solid colours or real transparency.
 Zooming is handled in a new way that keeps every detail of the sprites when the camera pulls back 
 (until now, only Digital Eclipse’s "Samurai Shodown Neo Geo Collection" had done this, applying it solely to *Samurai Shodown* 1 through 5).
+<img width="1920" height="1080" alt="04 zero samsho3 shadows" src="https://github.com/user-attachments/assets/cb992854-6f0d-41a5-88f5-a560bbe765c5" />
+
+<img width="1920" height="1080" alt="06 zero samsho3 zoomout" src="https://github.com/user-attachments/assets/7f74e7e6-a505-42f2-bf00-f10e06ab0417" />
 
 And along the way a few more fixes found their place, from hidden bosses to a fairer CPU, all described below.
 
@@ -36,6 +41,9 @@ including other front-ends and emulators. Credits (a link back to this repositor
 - CRT filter: scanlines, blur, integer scaling, monitor aspect options, automatic black-border cropping.
 - ARCADE and VERSUS modes, free play, difficulty, region and button mapping per game, controller and keyboard support.
 - Optional download of logos and backgrounds from SteamGridDB (with your own free API key), or use your own images.
+<img width="960" height="540" alt="01 FCHD splash screen" src="https://github.com/user-attachments/assets/bb72dc2c-7093-4506-ada8-4ddcd7e46a32" />
+
+<img width="960" height="540" alt="02 FCHD selection screen" src="https://github.com/user-attachments/assets/c5d75503-3e9c-4706-807f-0791e907bd30" />
 
 ## Supported games
 
