@@ -18,7 +18,7 @@ Another problem: the games with a camera zoom-out, which, because of the technic
 
 So I decided to do something about it. The flicker is gone, replaced by solid colours or real transparency.
 Zooming is handled in a new way that keeps every detail of the sprites when the camera pulls back 
-(until now, only Digital Eclipse’s "Samurai Shodown Neo Geo Collection" had done this, applying it solely to *Samurai Shodown* 1 through 5).
+(until now, only Digital Eclipse’s "Samurai Shodown Neo Geo Collection" had done this, applying it to *Samurai Shodown* 1 through 5).
 <img width="1920" height="1080" alt="04 zero samsho3 shadows" src="https://github.com/user-attachments/assets/cb992854-6f0d-41a5-88f5-a560bbe765c5" />
 
 <img width="1920" height="1080" alt="06 zero samsho3 zoomout" src="https://github.com/user-attachments/assets/7f74e7e6-a505-42f2-bf00-f10e06ab0417" />
